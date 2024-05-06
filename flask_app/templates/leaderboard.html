@@ -1,0 +1,31 @@
+{% extends "header.html" %}
+{% block content %}
+<div class="container mx-auto">
+    <h1 class="text-3xl font-bold mb-4">Leaderboard</h1>
+    <div class="grid grid-cols-3 gap-4">
+        <div class="col-span-2">
+            <table class="w-full">
+                <thead>
+                    <tr>
+                        <th class="px-4 py-2">Rank</th>
+                        <th class="px-4 py-2">Username</th>
+                        <th class="px-4 py-2">Burger Count</th>
+                        <th class="px-4 py-2">Calorie Count</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in top_50 %}
+                        {% set rank = loop.index %}
+                        <tr>
+                            <td class="border px-4 py-2">{{ rank }}</td>
+                            <td class="border px-4 py-2">{{ user.username }}</td>
+                            <td class="border px-4 py-2">{{ user.burger_counter }}</td>
+                            <td class="border px-4 py-2">{{ user.calorie_counter }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

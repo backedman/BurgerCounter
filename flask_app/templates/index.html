@@ -1,0 +1,9 @@
+<!-- leaderboard.html -->
+{% extends "header.html" %}
+{% block title %}Burger Counter{% endblock %}
+{% block content %}
+    <h1>Your Burger Information</h1>
+    <p>Total Burgers Eaten: {{ burger_count }}</p>
+    <p>Total Calories Consumed: {{ calorie_count }}</p>
+    <button onclick="window.location.href='/burger'">Check out the Burger Menu</button>
+{% endblock %}
